@@ -14,7 +14,7 @@ Copy the URL of the hosted page (e.g., https://primeindian.github.io/membership-
 Append ?membershipNumber=YOUR_MEMBERSHIP_NUMBER to the URL.
 Share or open the link to directly view membership details.
 Example:
-https://primeindian.github.io/membership-verification/?membershipNumber=AM3102451
+https://primeindian.github.io/membership-verification/?membershipNumber=AM123456
 
 Note: This tool interacts with the IEIndia website and may be subject to CORS restrictions depending on browser and website policies.
 
