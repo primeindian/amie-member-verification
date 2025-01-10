@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify Membership</title>
+    <script>
+        // Function to extract query string parameters
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        window.onload = function() {
+            const membershipNumber = getQueryParam('membershipNumber'); // Read the 'membershipNumber' query parameter
+
+            if (!membershipNumber) {
+                document.body.innerHTML = '<p>Error: Membership number not provided in the query string.</p>';
+                return;
+            }
+
+            // Create an iframe to load the IEIndia page
+            const targetURL = "https://www.ieindia.org/webui/iei-memb.aspx";
+            const iframe = document.createElement('iframe');
+            iframe.src = targetURL;
+            iframe.style.width = '100%';
+            iframe.style.height = '100vh';
+            iframe.style.border = 'none';
+            document.body.appendChild(iframe);
+
+            // After the iframe loads, populate the membership number and trigger the search
+            iframe.onload = function() {
+                try {
+                    const iframeDoc = iframe.contentWindow || iframe.contentDocument;
+                    if (iframeDoc.document) iframeDoc = iframeDoc.document;
+
+                    iframeDoc.getElementById('findMember_partycode').value = membershipNumber;
+                    iframeDoc.findMember(); // Trigger the search function
+                } catch (error) {
+                    document.body.innerHTML = '<p>Error: Unable to interact with the IEIndia website. CORS restrictions may apply.</p>';
+                }
+            };
+        };
+    </script>
+</head>
+<body>
+    <p>Redirecting to the membership details...</p>
+</body>
+</html>
