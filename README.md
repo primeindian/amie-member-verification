@@ -10,11 +10,11 @@ Automatically redirects users to the IEIndia membership details page and display
 Simple and user-friendly, enabling any member to verify their details with a direct URL.
 Usage:
 
-Copy the URL of the hosted page (e.g., https://yourusername.github.io/membership-verification/).
+Copy the URL of the hosted page (e.g., https://primeindian.github.io/membership-verification/).
 Append ?membershipNumber=YOUR_MEMBERSHIP_NUMBER to the URL.
 Share or open the link to directly view membership details.
 Example:
-https://yourusername.github.io/membership-verification/?membershipNumber=AM3102451
+https://primeindian.github.io/membership-verification/?membershipNumber=AM3102451
 
 Note: This tool interacts with the IEIndia website and may be subject to CORS restrictions depending on browser and website policies.
 
